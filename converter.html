@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <main class="calculator-main">
+    <header class="header">
+      <div class="logo"><span>Unit Converter</span></div>
+      <div class="controls">
+        <button class="control-btn" data-action="theme"><i class="fas fa-moon"></i></button>
+        <a style="text-decoration: none;" href="index.html" class="key function">← Back</a>
+      </div>
+    </header>
+
+    <section class="panel active">
+      <div class="mode-selector" id="categorySelector" style="margin-bottom: 20px; flex-wrap: wrap; justify-content: center;">
+        <!-- Categories injected by JS -->
+      </div>
+
+      <div class="conversion-container" style="display: flex; flex-direction: column; gap: 15px;">
+        <div class="input-group">
+            <label style="display: block; margin-bottom: 5px; font-size: 14px;">From</label>
+            <div style="display: flex; gap: 10px;">
+                <input type="number" id="inputValue" class="conversion-input" value="1" placeholder="Enter value">
+                <select id="fromUnit" class="conversion-select"></select>
+            </div>
+        </div>
+
+        <div style="text-align: center; font-size: 24px; color: rgba(255,255,255,0.5);">↓</div>
+
+        <div class="input-group">
+            <label style="display: block; margin-bottom: 5px; font-size: 14px;">To</label>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="outputValue" class="conversion-input" readonly placeholder="Result">
+                <select id="toUnit" class="conversion-select"></select>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="converter.js" defer></script>
+<script src="theme.js" defer></script>
+</body>
+</html>

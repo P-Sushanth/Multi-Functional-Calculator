@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equation Solver</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <main class="calculator-main">
+    <header class="header">
+      <div class="logo"><span>Equation Solver</span></div>
+      <div class="controls">
+        <button class="control-btn" data-action="theme"><i class="fas fa-moon"></i></button>
+        <a style="text-decoration: none;" href="index.html" class="key function">← Back</a>
+      </div>
+    </header>
+
+    <section class="panel active">
+      <h3>Polynomial Solver</h3>
+      <div class="mode-selector" style="margin-bottom: 15px;">
+        <button class="mode-btn active" data-degree="2">Quadratic</button>
+        <button class="mode-btn" data-degree="3">Cubic</button>
+        <button class="mode-btn" data-degree="4">Quartic</button>
+      </div>
+
+      <div id="polyInputs" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px;">
+        <!-- Inputs injected by JS -->
+      </div>
+
+      <button class="key function" id="solvePolyBtn">Find Roots</button>
+      <div id="polyResult" class="result" style="font-size: 18px; text-align: left; margin-top: 15px; min-height: 20px;"></div>
+    </section>
+
+    <section class="panel" style="margin-top: 20px;">
+      <h3>General Solver (Newton-Raphson)</h3>
+      <div style="display: grid; gap: 10px; margin-bottom: 15px;">
+        <div>
+          <label style="display:block; margin-bottom:5px; font-size: 14px;">Equation f(x) = 0</label>
+          <input type="text" id="equationInput" class="graph-input" placeholder="e.g. x^2 - 4" style="width: 100%;">
+        </div>
+        <div>
+          <label style="display:block; margin-bottom:5px; font-size: 14px;">Initial Guess (x₀)</label>
+          <input type="number" id="guessInput" class="graph-input" value="1" style="width: 100%;">
+        </div>
+      </div>
+      <button class="key function" id="solveGeneralBtn">Solve</button>
+      <div id="generalResult" class="result" style="font-size: 18px; text-align: left; margin-top: 15px; min-height: 20px;"></div>
+    </section>
+
+    <section class="panel" style="margin-top: 20px;">
+      <h3>System of Linear Equations</h3>
+      <div class="mode-selector" style="margin-bottom: 15px;">
+        <button class="sys-mode-btn active" data-vars="2">2 Variables</button>
+        <button class="sys-mode-btn" data-vars="3">3 Variables</button>
+      </div>
+      <div id="systemInputs" style="display: grid; gap: 10px; margin-bottom: 20px;"></div>
+      <button class="key function" id="solveSystemBtn">Solve System</button>
+      <div id="systemResult" class="result" style="font-size: 18px; text-align: left; margin-top: 15px; min-height: 20px;"></div>
+    </section>
+
+  </main>
+</div>
+<script src="equation.js" defer></script>
+<script src="theme.js" defer></script>
+</body>
+</html>

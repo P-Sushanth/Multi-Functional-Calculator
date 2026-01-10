@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculus Operations</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <main class="calculator-main">
+    <header class="header">
+      <div class="logo"><span>Calculus</span></div>
+      <div class="controls">
+        <button class="control-btn" data-action="theme"><i class="fas fa-moon"></i></button>
+        <a style="text-decoration: none;" href="index.html" class="key function">← Back</a>
+      </div>
+    </header>
+
+    <section class="panel active">
+      <h3>Differentiation</h3>
+      <div class="input-group" style="margin-bottom: 15px;">
+        <label style="display:block; margin-bottom:5px; font-size: 14px;">Function f(x)</label>
+        <input type="text" id="diffInput" class="graph-input" placeholder="e.g. x^2 + sin(x)" style="width: 100%;">
+      </div>
+      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+        <button class="key function" id="deriveBtn">d/dx</button>
+        <button class="key function" id="derive2Btn">d²/dx²</button>
+        <button class="key function" id="tangentBtn">Tangent at x=?</button>
+        <input type="number" id="tangentPoint" class="matrix-cell" placeholder="x₀" style="width: 80px;">
+      </div>
+      <div id="diffResult" class="result" style="font-size: 18px; text-align: left; min-height: 20px;"></div>
+    </section>
+
+    <section class="panel" style="margin-top: 20px;">
+      <h3>Definite Integration (Numerical)</h3>
+      <div class="input-group" style="margin-bottom: 15px;">
+        <label style="display:block; margin-bottom:5px; font-size: 14px;">Function f(x)</label>
+        <input type="text" id="intInput" class="graph-input" placeholder="e.g. 2*x" style="width: 100%;">
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px;">
+        <label>From:</label>
+        <input type="number" id="intStart" class="matrix-cell" value="0" style="width: 70px;">
+        <label>To:</label>
+        <input type="number" id="intEnd" class="matrix-cell" value="1" style="width: 70px;">
+        <button class="key function" id="integrateBtn">Integrate</button>
+      </div>
+      <div id="intResult" class="result" style="font-size: 18px; text-align: left; min-height: 20px;"></div>
+    </section>
+
+    <section class="panel" style="margin-top: 20px;">
+      <h3>Limits (Numerical)</h3>
+      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+        <div style="flex: 2;">
+            <label style="display:block; margin-bottom:5px; font-size: 14px;">Function f(x)</label>
+            <input type="text" id="limitInput" class="graph-input" placeholder="e.g. sin(x)/x" style="width: 100%;">
+        </div>
+        <div style="flex: 1;">
+            <label style="display:block; margin-bottom:5px; font-size: 14px;">x →</label>
+            <input type="number" id="limitPoint" class="graph-input" value="0" style="width: 100%;">
+        </div>
+      </div>
+      <button class="key function" id="limitBtn">Calculate Limit</button>
+      <div id="limitResult" class="result" style="font-size: 18px; text-align: left; margin-top: 10px; min-height: 20px;"></div>
+    </section>
+
+    <section class="panel" style="margin-top: 20px;">
+      <h3>Taylor Series Expansion</h3>
+      <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px;">
+        <input type="text" id="taylorInput" class="graph-input" placeholder="e.g. e^x" style="flex: 2;">
+        <input type="number" id="taylorPoint" class="matrix-cell" placeholder="a" value="0" style="width: 60px;" title="Center point">
+        <input type="number" id="taylorOrder" class="matrix-cell" placeholder="n" value="4" style="width: 60px;" title="Order">
+        <button class="key function" id="taylorBtn">Expand</button>
+      </div>
+      <div id="taylorResult" class="result" style="font-size: 16px; text-align: left; min-height: 20px; word-break: break-all;"></div>
+    </section>
+
+  </main>
+</div>
+<script src="calculus.js" defer></script>
+<script src="theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matrix Calculator</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div class="container">
+
+  <main class="calculator-main">
+    <header class="header">
+      <div class="logo">
+        <span>Matrix Calculator</span>
+      </div>
+
+      <div class="controls">
+        <button class="control-btn" data-action="theme"><i class="fas fa-moon"></i></button>
+        <a style="text-decoration: none;" href="index.html" class="key function">← Back</a>
+      </div>
+    </header>
+
+    <section class="panel matrix-panel active">
+
+      <div class="matrix-dimensions">
+        <fieldset>
+          <legend>Matrix A</legend>
+          <label>Rows
+            <input type="number" id="rowsA" min="1" max="6" value="2">
+          </label>
+          <label>Columns
+            <input type="number" id="colsA" min="1" max="6" value="2">
+          </label>
+        </fieldset>
+      
+        <fieldset>
+          <legend>Matrix B</legend>
+          <label>Rows
+            <input type="number" id="rowsB" min="1" max="6" value="2">
+          </label>
+          <label>Columns
+            <input type="number" id="colsB" min="1" max="6" value="2">
+          </label>
+        </fieldset>
+      </div>
+      
+
+      <div id="matrixA" class="matrix-input"></div>
+      <div id="matrixB" class="matrix-input"></div>
+
+      <div class="matrix-controls">
+        <button class="key function" data-op="add">A + B</button>
+        <button class="key function" data-op="sub">A − B</button>
+        <button class="key function" data-op="mul">A × B</button>
+      
+        <button class="key function" data-op="transpose">Aᵀ</button>
+        <button class="key function" data-op="inv">A⁻¹</button>
+      
+        <button class="key function" data-op="det">det(A)</button>
+        <button class="key function" data-op="trace">tr(A)</button>
+        <button class="key function" data-op="rank">rank(A)</button>
+      
+        <button class="key function" data-op="eigen">eigen(A)</button>
+        <button class="key function" data-op="svd">SVD(A)</button>
+        <button class="key function" data-op="diagonalize">Diag(A)</button>
+        <button class="key function" data-op="gram_schmidt">GS(A)</button>
+        <button class="key function" data-op="scalar">c × A</button>
+        <button class="key function" data-op="row_swap">Rᵢ ↔ Rⱼ</button>
+        <button class="key function" data-op="row_scale">k × Rᵢ</button>
+        <button class="key function" data-op="row_add">Rᵢ + kRⱼ</button>
+        <button class="key function" data-op="inner">Inner ⟨A,B⟩</button>
+        <button class="key function" data-op="outer">Outer (A⊗B)</button>
+      </div>
+      
+
+      <div id="matrixResult" class="matrix-input"></div>
+      <div id="matrixScalarResult" class="matrix-scalar-result"></div>
+
+
+    </section>
+  </main>
+
+</div>
+
+<script src="matrix.js" defer></script>
+<script src="theme.js" defer></script>
+</body>
+</html>
