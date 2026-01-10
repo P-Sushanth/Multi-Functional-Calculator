@@ -9,6 +9,7 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     transition: all 0.3s ease;
+    font-size: 18px;
 }
 
 body.dark {
@@ -95,6 +96,8 @@ body.dark {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 16px;
+    min-width: 44px;
+    min-height: 44px;
     user-select: none;
 }
 
@@ -121,7 +124,7 @@ body.dark {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 1.5rem;
     min-height: 30px;
 }
 
@@ -138,7 +141,7 @@ body.dark {
 }
 
 .result {
-    font-size: 24px;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #00ff88;
     text-align: right;
@@ -169,10 +172,10 @@ body.dark {
 }
 
 .key {
-    padding: 15px;
+    padding: 20px;
     border: none;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 1.25rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -210,7 +213,7 @@ body.dark {
 .key.function {
     background: rgba(74, 144, 226, 0.2);
     border-color: rgba(74, 144, 226, 0.3);
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 .key.function:hover {
@@ -329,6 +332,7 @@ body.dark {
     font-family: 'Courier New', monospace;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 .graph-input::placeholder {
@@ -360,6 +364,7 @@ body.dark {
     font-family: 'Courier New', monospace;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 .conversion-input:focus, .conversion-select:focus, .graph-input:focus {
@@ -431,8 +436,14 @@ body.dark {
     }
     
     .key {
-        padding: 12px 8px;
-        font-size: 14px;
+        padding: 15px;
+        font-size: 1.1rem;
+        min-height: 50px;
+    }
+
+    .matrix-dimensions {
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
@@ -471,6 +482,7 @@ body.dark {
     text-align: center;
     font-family: monospace;
     transition: all 0.2s ease;
+    font-size: 1rem;
 }
 
 .matrix-cell:focus {
@@ -616,6 +628,25 @@ body.dark {
     background: rgba(0,0,0,0.1);
   }
   
+  .matrix-dimensions legend {
+    padding: 0 8px;
+    font-weight: 600;
+  }
+  
+  .matrix-dimensions label {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-top: 6px;
+  }
+  
+  .matrix-input {
+    justify-content: start;
+  }
+  
+  .matrix-cell {
+    border-radius: 6px;
+  }
   .matrix-dimensions legend {
     padding: 0 8px;
     font-weight: 600;
